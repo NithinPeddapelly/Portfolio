@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import emailjs from '@emailjs/browser';
-import resumePDF from '../assets/Nithin_Peddapelly_2025_c.pdf';
+import resumePDF from '../assets/Nithin_Peddapelly_2025_new.pdf';
 import { Mail, Linkedin, Github, Send, MapPin, Phone } from 'lucide-react';
 
 const Contact = () => {
