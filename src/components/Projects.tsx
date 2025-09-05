@@ -109,7 +109,7 @@ const Projects = () => {
                 <div className="flex gap-3">
                   {index === 0 ? (
                     <a
-                      href="https://lyno-frontend.onrender.com/"
+                      href="https://github.com/NithinPeddapelly/eon"
                       target="_blank"
                       rel="noopener noreferrer"
                       className="flex-1 bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-700 hover:to-blue-800 text-white font-semibold py-3 px-4 rounded-lg transition-all duration-300 flex items-center justify-center gap-2 group"
@@ -119,7 +119,7 @@ const Projects = () => {
                     </a>
                   ) : (
                     <a
-                      href="https://github.com/NithinPeddapelly/eon"
+                      href="https://lyno-frontend.onrender.com/"
                       target="_blank"
                       rel="noopener noreferrer"
                       className="flex-1 bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-700 hover:to-blue-800 text-white font-semibold py-3 px-4 rounded-lg transition-all duration-300 flex items-center justify-center gap-2 group"
