@@ -38,7 +38,7 @@ const Contact = () => {
       );
 
       alert(
-        "You will receive an acknowledgment shortly — please check your spam folder if not visible!"
+        "Thanks for reaching out! You’ll receive an acknowledgment shortly. Please check your inbox (and spam) — I reply to every message."
       );
       setFormData({ name: "", email: "", message: "" });
     } catch (error) {
