@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { ChevronLeft, ChevronRight } from 'lucide-react';
 
 interface CarouselProps {
   images: string[];
@@ -12,37 +13,40 @@ const Carousel: React.FC<CarouselProps> = ({ images, altPrefix = 'Screenshot' })
   const prev = () => setCurrent((prev) => (prev - 1 + images.length) % images.length);
 
   return (
-  <div className="relative w-full h-48 flex items-center justify-center overflow-hidden group">
+    <div className="relative h-full w-full overflow-hidden group">
       {images.map((img, idx) => (
         <img
           key={idx}
           src={img}
           alt={`${altPrefix} ${idx + 1}`}
-          className={`object-cover w-full h-full shadow-md absolute top-0 left-0 transition-opacity duration-700 ease-in-out ${idx === current ? 'opacity-100 z-10' : 'opacity-0 z-0'}`}
+          className={`absolute left-0 top-0 h-full w-full object-cover transition-opacity duration-700 ease-in-out ${idx === current ? 'z-10 opacity-100' : 'z-0 opacity-0'}`}
           style={{ borderRadius: 0 }}
         />
       ))}
+
+      <div className="pointer-events-none absolute inset-0 z-10 bg-gradient-to-t from-slate-900/25 via-transparent to-transparent" />
+
       {images.length > 1 && (
         <>
           <button
             onClick={prev}
-            className="absolute left-4 top-1/2 -translate-y-1/2 opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-20 border-2 border-white-400 hover:border-blue-500 bg-transparent text-white-300 hover:text-blue-400 rounded-full p-2 shadow-lg outline-none focus:ring-2 focus:ring-white-400"
+            className="absolute left-4 top-1/2 z-20 flex h-10 w-10 -translate-y-1/2 items-center justify-center rounded-full border border-white/40 bg-slate-900/55 text-white shadow-lg backdrop-blur-sm transition-all duration-300 hover:scale-105 hover:border-white/80 hover:bg-slate-800/80 focus:outline-none focus-visible:ring-2 focus-visible:ring-cyan-300"
             aria-label="Previous"
           >
-            <span className="text-2xl font-bold">&#8592;</span>
+            <ChevronLeft className="h-5 w-5" />
           </button>
           <button
             onClick={next}
-            className="absolute right-4 top-1/2 -translate-y-1/2 opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-20 border-2 border-white-400 hover:border-blue-500 bg-transparent text-white-300 hover:text-blue-400 rounded-full p-2 shadow-lg outline-none focus:ring-2 focus:ring-white-400"
+            className="absolute right-4 top-1/2 z-20 flex h-10 w-10 -translate-y-1/2 items-center justify-center rounded-full border border-white/40 bg-slate-900/55 text-white shadow-lg backdrop-blur-sm transition-all duration-300 hover:scale-105 hover:border-white/80 hover:bg-slate-800/80 focus:outline-none focus-visible:ring-2 focus-visible:ring-cyan-300"
             aria-label="Next"
           >
-            <span className="text-2xl font-bold">&#8594;</span>
+            <ChevronRight className="h-5 w-5" />
           </button>
-          <div className="absolute bottom-2 left-1/2 -translate-x-1/2 flex gap-2 z-30">
+          <div className="absolute bottom-3 left-1/2 z-30 flex -translate-x-1/2 gap-2 rounded-full border border-white/20 bg-slate-900/45 px-3 py-1.5 backdrop-blur-sm">
             {images.map((_, idx) => (
               <span
                 key={idx}
-                className={`block w-2 h-2 rounded-full ${idx === current ? 'bg-blue-500' : 'bg-slate-400/60'} transition`}
+                className={`block h-2.5 w-2.5 rounded-full transition-all ${idx === current ? 'bg-cyan-300 shadow-[0_0_10px_rgba(103,232,249,0.9)]' : 'bg-white/50'}`}
               />
             ))}
           </div>

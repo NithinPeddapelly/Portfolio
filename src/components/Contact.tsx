@@ -38,7 +38,7 @@ const Contact = () => {
       );
 
       alert(
-        "Thanks for reaching out! You’ll receive an acknowledgment shortly. Please check your inbox (and spam) — I reply to every message."
+        "Thanks for reaching out! You’ll receive an acknowledgment shortly. Please check your inbox (and spam) - I reply to every message."
       );
       setFormData({ name: "", email: "", message: "" });
     } catch (error) {
@@ -69,7 +69,7 @@ const Contact = () => {
             <h3 className="text-2xl font-bold mb-6">
               Send me a message{" "}
               <span className="block text-sm font-normal text-slate-400 mt-1">
-                (This form actually works — you’ll always get a reply!)
+                (This form actually works - you'll always get a reply!)
               </span>
             </h3>
 
@@ -164,8 +164,7 @@ const Contact = () => {
                   <div>
                     <p className="text-slate-300 text-sm">Location</p>
                     <p className="font-medium">
-                      Hyderabad,Telangana , India | Available for Reallocation &
-                      Remote Work{" "}
+                      Edinburgh, Scotland, UK
                     </p>
                   </div>
                 </div>

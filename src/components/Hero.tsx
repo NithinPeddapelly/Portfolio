@@ -1,6 +1,6 @@
 import React from 'react';
 import profileImg from '../assets/profile.jpg';
-import { Github, Linkedin, ArrowDown } from 'lucide-react';
+import { Github, Linkedin, ArrowDown, Code2, Zap, Cpu, Database } from 'lucide-react';
 
 const Hero = () => {
   const scrollToProjects = () => {
@@ -23,13 +23,54 @@ const Hero = () => {
           {/* Text Content */}
           <div className="flex-1 text-center lg:text-left text-[1.25rem] lg:text-[2.5rem]">
             <div className="animate-fade-in-up">
+              <p className="text-sm uppercase tracking-[0.25em] text-teal-300 mb-6 font-semibold">Developer</p>
               <h1 className="text-6xl lg:text-8xl font-bold mb-8 leading-tight">
                 Hi, I'm <span className="text-transparent bg-clip-text bg-gradient-to-r from-teal-400 to-blue-400">Nithin</span>
               </h1>
               <p className="text-2xl lg:text-3xl text-slate-300 mb-10 leading-relaxed">
-                I build scalable, elegant solutions with curiosity and precision
+                I build scalable solutions with curiosity and precision.
               </p>
+
+              {/* Features */}
               <div className="flex gap-6 justify-center lg:justify-start mb-10">
+                <div className="flex items-center gap-3">
+                  <Code2 className="w-6 h-6 text-teal-400" />
+                  <span className="text-white font-medium">Clean Code</span>
+                </div>
+                <div className="flex items-center gap-3">
+                  <Zap className="w-6 h-6 text-teal-400" />
+                  <span className="text-white font-medium">Scalable Solutions</span>
+                </div>
+              </div>
+
+              <button 
+                onClick={scrollToProjects}
+                className="bg-gradient-to-r from-teal-500 to-blue-600 hover:from-teal-600 hover:to-blue-700 text-white font-semibold py-5 px-12 rounded-full transition-all duration-300 hover:shadow-lg hover:shadow-teal-500/25 transform hover:-translate-y-1 text-xl mb-12"
+              >
+                Explore Projects
+              </button>
+
+              {/* Tech Stack */}
+              <div>
+                <p className="text-xs uppercase tracking-[0.25em] text-teal-300 mb-4 font-semibold">Tech Stack</p>
+                <div className="flex gap-4 justify-center lg:justify-start">
+                  <div className="p-3 bg-slate-800/50 rounded-lg hover:bg-slate-700/50 transition-all">
+                    <Cpu className="w-6 h-6 text-cyan-400" />
+                  </div>
+                  <div className="p-3 bg-slate-800/50 rounded-lg hover:bg-slate-700/50 transition-all">
+                    <Code2 className="w-6 h-6 text-blue-400" />
+                  </div>
+                  <div className="p-3 bg-slate-800/50 rounded-lg hover:bg-slate-700/50 transition-all">
+                    <Database className="w-6 h-6 text-green-400" />
+                  </div>
+                  <div className="p-3 bg-slate-800/50 rounded-lg hover:bg-slate-700/50 transition-all">
+                    <Github className="w-6 h-6 text-slate-300" />
+                  </div>
+                </div>
+              </div>
+
+              {/* Social Links (moved below tech stack) */}
+              <div className="flex gap-6 justify-center lg:justify-start mt-10">
                 <a 
                   href="https://github.com/NithinPeddapelly" 
                   target="_blank" 
@@ -47,12 +88,6 @@ const Hero = () => {
                   <Linkedin className="w-6 h-6 group-hover:text-white" />
                 </a>
               </div>
-              <button 
-                onClick={scrollToProjects}
-                className="bg-gradient-to-r from-teal-500 to-blue-600 hover:from-teal-600 hover:to-blue-700 text-white font-semibold py-5 px-12 rounded-full transition-all duration-300 hover:shadow-lg hover:shadow-teal-500/25 transform hover:-translate-y-1 text-xl"
-              >
-                Explore My Work
-              </button>
             </div>
           </div>
 
