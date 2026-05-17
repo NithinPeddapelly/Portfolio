@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import emailjs from "@emailjs/browser";
-import resumePDF from "../assets/Nithin_Peddapelly_2025_new.pdf";
+import resumePDF from "../assets/Nithin_Dev_2026.pdf";
 import { Mail, Linkedin, Github, Send, MapPin, Phone } from "lucide-react";
 
 const Contact = () => {
@@ -206,7 +206,7 @@ const Contact = () => {
               </h4>
               <a
                 href={resumePDF}
-                download="Nithin_Peddapelly_Resume.pdf"
+                download="Nithin_Dev_2026.pdf"
                 className="inline-block bg-gradient-to-r from-teal-500 to-blue-600 hover:from-teal-600 hover:to-blue-700 text-white font-semibold py-3 px-8 rounded-full transition-all duration-300 shadow-lg hover:shadow-teal-500/25 text-lg"
               >
                 Download Resume
