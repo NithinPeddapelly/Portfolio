@@ -264,7 +264,26 @@ const Projects = () => {
       return project.domains.includes(activeFilter);
     });
 
-    return filtered.sort((a, b) => b.endDate.localeCompare(a.endDate));
+    const preferredOrder = [
+      'EON - Version Control System',
+      'Lyno - Video Communication Platform',
+      'The Baking Cottage Website',
+      'Portfolio Website',
+      'AI Chatbot Platform'
+    ];
+
+    const orderIndex = new Map(preferredOrder.map((name, index) => [name, index]));
+
+    return filtered.sort((a, b) => {
+      const aIndex = orderIndex.get(a.name) ?? Number.MAX_SAFE_INTEGER;
+      const bIndex = orderIndex.get(b.name) ?? Number.MAX_SAFE_INTEGER;
+
+      if (aIndex !== bIndex) {
+        return aIndex - bIndex;
+      }
+
+      return b.endDate.localeCompare(a.endDate);
+    });
   }, [activeFilter, projects]);
 
   const renderPreview = (project: Project) => {
@@ -493,7 +512,7 @@ const Projects = () => {
                   ) : (
                     <div className="flex flex-1 cursor-not-allowed items-center justify-center gap-2 rounded-xl border border-slate-200 bg-slate-100 px-4 py-3.5 font-semibold text-slate-500">
                       <ExternalLink className="h-4 w-4" />
-                      Private Demo
+                      Run Locally
                     </div>
                   )}
 
