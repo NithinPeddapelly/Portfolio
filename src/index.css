@@ -2,62 +2,32 @@
 @tailwind components;
 @tailwind utilities;
 
-@keyframes fade-in-up {
-  from {
-    opacity: 0;
-    transform: translateY(30px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
+html { scroll-behavior: smooth; background: #07070a; }
+body { margin: 0; font-family: 'Space Grotesk', sans-serif; color: #ecece6; background: #07070a; overflow-x: hidden; }
+::selection { background: #d4ff3a; color: #000; }
 
-.animate-fade-in-up {
-  animation: fade-in-up 1s ease-out;
-}
+/* The cursor is the black hole (see BlackHole.tsx) */
+@media (pointer: fine) { html, body, a, button, input, textarea, label { cursor: none !important; } }
+@media (pointer: coarse) { .hole-cursor { display: none; } }
 
-/* Smooth scrolling */
-html {
-  scroll-behavior: smooth;
+.float-card {
+  background: #0f0f13;
+  border: 1px solid rgba(236, 236, 230, 0.14);
+  border-radius: 28px 6px 28px 6px;
+  padding: 1.25rem;
+  box-shadow: 0 0 calc(var(--p, 0) * 46px) calc(var(--p, 0) * 8px) rgba(212, 255, 58, 0.55);
+  border-color: rgba(212, 255, 58, calc(0.14 + var(--p, 0) * 0.86));
 }
+.float-pill {
+  background: #d4ff3a; color: #000; border-radius: 999px; padding: 0.75rem 1.4rem; font-weight: 700; white-space: nowrap;
+  box-shadow: 0 0 calc(var(--p, 0) * 46px) calc(var(--p, 0) * 8px) rgba(139, 92, 255, 0.8);
+}
+.float-pill.ghost { background: transparent; color: #ecece6; border: 1px solid rgba(236, 236, 230, 0.35); }
 
-/* Custom scrollbar */
-::-webkit-scrollbar {
-  width: 8px;
-}
+@keyframes bob { 0%, 100% { transform: translateY(0) rotate(-0.6deg); } 50% { transform: translateY(-10px) rotate(0.6deg); } }
+.bob { animation: bob 6s ease-in-out infinite; }
 
-::-webkit-scrollbar-track {
-  background: #f1f5f9;
-}
+@keyframes draw { from { stroke-dashoffset: 1; } to { stroke-dashoffset: 0; } }
+.draw path { stroke-dasharray: 1; stroke-dashoffset: 1; animation: draw 2.2s ease-out 0.4s forwards; }
 
-::-webkit-scrollbar-thumb {
-  background: linear-gradient(to bottom, #14b8a6, #3b82f6);
-  border-radius: 4px;
-}
-
-::-webkit-scrollbar-thumb:hover {
-  background: linear-gradient(to bottom, #0d9488, #2563eb);
-}
-
-/* Prose styling for better readability */
-.prose {
-  color: #475569;
-}
-
-.prose strong {
-  font-weight: 600;
-}
-
-/* Enhanced focus styles */
-input:focus, textarea:focus, button:focus {
-  outline: 2px solid #14b8a6;
-  outline-offset: 2px;
-}
-
-/* Smooth transitions for all interactive elements */
-* {
-  transition-property: transform, scale, opacity, background-color, border-color, color;
-  transition-duration: 0.2s;
-  transition-timing-function: ease-in-out;
-}
+@keyframes spin { to { transform: rotate(360deg); } }
