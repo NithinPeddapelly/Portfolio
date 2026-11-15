@@ -1,120 +1,26 @@
-import React from 'react';
-import profileImg from '../assets/profile.jpg';
-import { Github, Linkedin, ArrowDown, Code2, Zap, Cpu, Database } from 'lucide-react';
+import { Github, Linkedin } from 'lucide-react';
+import { Zone, Float } from './ui/Zone';
+import { profile } from '../data/profile';
 
-const Hero = () => {
-  const scrollToProjects = () => {
-    const projectsSection = document.getElementById('projects');
-    if (projectsSection) {
-      projectsSection.scrollIntoView({ behavior: 'smooth' });
-    }
-  };
+const word = 'font-display font-extrabold leading-none text-ink';
 
+export default function Hero() {
   return (
-    <section className="min-h-screen flex items-center justify-center bg-gradient-to-br from-slate-900 via-blue-900 to-slate-800 text-white relative overflow-hidden">
-      {/* Background Pattern */}
-      <div className="absolute inset-0 opacity-10">
-        <div className="absolute inset-0 bg-gradient-to-r from-teal-500 to-blue-600 transform rotate-12 scale-150"></div>
-      </div>
-      
-  <div className="container mx-auto px-10 z-10">
-  <div className="flex flex-col lg:flex-row items-center justify-between gap-16">
-          
-          {/* Text Content */}
-          <div className="flex-1 text-center lg:text-left text-[1.25rem] lg:text-[2.5rem]">
-            <div className="animate-fade-in-up">
-              <p className="text-sm uppercase tracking-[0.25em] text-teal-300 mb-6 font-semibold">Developer</p>
-              <h1 className="text-6xl lg:text-8xl font-bold mb-8 leading-tight">
-                Hi, I'm <span className="text-transparent bg-clip-text bg-gradient-to-r from-teal-400 to-blue-400">Nithin</span>
-              </h1>
-              <p className="text-2xl lg:text-3xl text-slate-300 mb-10 leading-relaxed">
-                I build scalable solutions with curiosity and precision.
-              </p>
-
-              {/* Features */}
-              <div className="flex gap-6 justify-center lg:justify-start mb-10">
-                <div className="flex items-center gap-3">
-                  <Code2 className="w-6 h-6 text-teal-400" />
-                  <span className="text-white font-medium">Clean Code</span>
-                </div>
-                <div className="flex items-center gap-3">
-                  <Zap className="w-6 h-6 text-teal-400" />
-                  <span className="text-white font-medium">Scalable Solutions</span>
-                </div>
-              </div>
-
-              <button 
-                onClick={scrollToProjects}
-                className="bg-gradient-to-r from-teal-500 to-blue-600 hover:from-teal-600 hover:to-blue-700 text-white font-semibold py-5 px-12 rounded-full transition-all duration-300 hover:shadow-lg hover:shadow-teal-500/25 transform hover:-translate-y-1 text-xl mb-12"
-              >
-                Explore Projects
-              </button>
-
-              {/* Tech Stack */}
-              <div>
-                <p className="text-xs uppercase tracking-[0.25em] text-teal-300 mb-4 font-semibold">Tech Stack</p>
-                <div className="flex gap-4 justify-center lg:justify-start">
-                  <div className="p-3 bg-slate-800/50 rounded-lg hover:bg-slate-700/50 transition-all">
-                    <Cpu className="w-6 h-6 text-cyan-400" />
-                  </div>
-                  <div className="p-3 bg-slate-800/50 rounded-lg hover:bg-slate-700/50 transition-all">
-                    <Code2 className="w-6 h-6 text-blue-400" />
-                  </div>
-                  <div className="p-3 bg-slate-800/50 rounded-lg hover:bg-slate-700/50 transition-all">
-                    <Database className="w-6 h-6 text-green-400" />
-                  </div>
-                  <div className="p-3 bg-slate-800/50 rounded-lg hover:bg-slate-700/50 transition-all">
-                    <Github className="w-6 h-6 text-slate-300" />
-                  </div>
-                </div>
-              </div>
-
-              {/* Social Links (moved below tech stack) */}
-              <div className="flex gap-6 justify-center lg:justify-start mt-10">
-                <a 
-                  href="https://github.com/NithinPeddapelly" 
-                  target="_blank" 
-                  rel="noopener noreferrer"
-                  className="p-4 bg-slate-800/50 hover:bg-teal-600 rounded-full transition-all duration-300 hover:scale-110 group"
-                >
-                  <Github className="w-6 h-6 group-hover:text-white" />
-                </a>
-                <a 
-                  href="https://www.linkedin.com/in/nithinpeddapelly/" 
-                  target="_blank" 
-                  rel="noopener noreferrer"
-                  className="p-4 bg-slate-800/50 hover:bg-blue-600 rounded-full transition-all duration-300 hover:scale-110 group"
-                >
-                  <Linkedin className="w-6 h-6 group-hover:text-white" />
-                </a>
-              </div>
-            </div>
-          </div>
-
-          {/* Profile Image */}
-          <div className="flex-1 flex justify-center lg:justify-end">
-            <div className="relative">
-              <div className="w-[26rem] h-[26rem] bg-gradient-to-br from-teal-400 to-blue-500 rounded-full p-3 animate-pulse">
-                <img
-                  src={profileImg}
-                  alt="Profile"
-                  className="w-full h-full object-cover rounded-full border-8 border-white shadow-2xl"
-                />
-              </div>
-              {/* Floating elements */}
-              <div className="absolute -top-4 -right-4 w-20 h-20 bg-teal-500/20 rounded-full animate-bounce delay-1000"></div>
-              <div className="absolute -bottom-4 -left-4 w-16 h-16 bg-blue-500/20 rounded-full animate-bounce delay-500"></div>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      {/* Scroll Indicator */}
-      <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
-        <ArrowDown className="w-6 h-6 text-slate-400" />
-      </div>
-    </section>
+    <Zone height="max(100vh, 700px)">
+      <Float speed={0.6}><h1 className={`${word} text-[clamp(2.75rem,9vw,8rem)]`}>NITHIN</h1></Float>
+      <Float speed={0.6}><span className={`${word} block text-[clamp(2.25rem,7vw,6.5rem)] text-acid`}>PEDDAPELLY</span></Float>
+      <Float className="w-full md:w-[22rem]"><div className="float-card">
+        <p className="font-mono text-xs text-ultra">software · machine learning</p>
+        <p className="mt-2 text-lg leading-snug">{profile.tagline}</p>
+      </div></Float>
+      <Float className="w-full md:w-72"><div className="float-card">
+        <p className="font-mono text-xs text-acid">// try this</p>
+        <p className="mt-2 text-sm text-ink/80">Everything here floats. Hold your cursor on anything for 6 seconds and the black hole will take it, then spit it back out somewhere else in the section.</p>
+      </div></Float>
+      <Float><a href="#projects" className="float-pill block">View Projects</a></Float>
+      <Float><a href="#contact" className="float-pill ghost block">Contact Me</a></Float>
+      <Float><a href={profile.github} target="_blank" rel="noopener noreferrer" className="float-pill ghost flex items-center gap-2"><Github size={16} />GitHub</a></Float>
+      <Float><a href={profile.linkedin} target="_blank" rel="noopener noreferrer" className="float-pill ghost flex items-center gap-2"><Linkedin size={16} />LinkedIn</a></Float>
+    </Zone>
   );
-};
-
-export default Hero;
+}
