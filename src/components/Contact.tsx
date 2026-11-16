@@ -1,7 +1,6 @@
 import { useState } from "react";
 import emailjs from "@emailjs/browser";
-import resumePDF from "../assets/Nithin_Dev_2026.pdf";
-import { Linkedin, Github, Send, MapPin, FileText } from "lucide-react";
+import { Linkedin, Github, Send, MapPin } from "lucide-react";
 import { Zone, Float } from "./ui/Zone";
 import { profile } from "../data/profile";
 
@@ -11,6 +10,7 @@ const Contact = () => {
     email: "",
     message: "",
   });
+  const [status, setStatus] = useState("");
 
   const handleChange = (
     e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
@@ -30,8 +30,6 @@ const Contact = () => {
         message: formData.message,
       };
 
-      console.log("Sending params:", templateParams); // debug log
-
       await emailjs.send(
         "service_nithin", // Service ID
         "template_myb433e", // Template ID
@@ -39,12 +37,10 @@ const Contact = () => {
         "ZNJRqEfJwnYNEqo6R" // Public Key
       );
 
-      alert(
-        "Thanks for reaching out! You’ll receive an acknowledgment shortly. Please check your inbox (and spam) - I reply to every message."
-      );
+      setStatus("Thanks for reaching out. I reply to every message; check your spam folder too.");
       setFormData({ name: "", email: "", message: "" });
     } catch (error) {
-      alert("Failed to send message. Please try again later.");
+      setStatus("Message failed to send. Please try again later or contact me on LinkedIn.");
       console.error("EmailJS error:", error);
     }
   };
@@ -60,11 +56,11 @@ const Contact = () => {
           <label className="block text-sm">Email<input name="email" type="email" value={formData.email} onChange={handleChange} required className={field} /></label>
           <label className="block text-sm">Message<textarea name="message" rows={4} value={formData.message} onChange={handleChange} required className={field} /></label>
           <button type="submit" className="float-pill flex items-center gap-2"><Send size={16} />Send</button>
+          <p role="status" aria-live="polite" className="text-sm text-acid">{status}</p>
         </form>
       </Float>
       <Float><a href={profile.github} target="_blank" rel="noopener noreferrer" className="float-pill ghost flex items-center gap-2"><Github size={16} />GitHub</a></Float>
       <Float><a href={profile.linkedin} target="_blank" rel="noopener noreferrer" className="float-pill ghost flex items-center gap-2"><Linkedin size={16} />LinkedIn</a></Float>
-      <Float><a href={resumePDF} download="Nithin_Dev_2026.pdf" className="float-pill flex items-center gap-2"><FileText size={16} />Resume</a></Float>
       <Float><div className="float-card flex items-center gap-2 text-sm"><MapPin size={16} className="text-acid" />{profile.location}</div></Float>
     </Zone>
   );
