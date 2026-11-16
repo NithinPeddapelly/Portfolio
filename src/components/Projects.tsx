@@ -7,7 +7,7 @@ export default function Projects() {
     <Zone id="projects" height="1150px">
       <Float speed={0.5}><h2 className="font-display text-5xl font-extrabold md:text-7xl">Projects<span className="text-acid">.</span></h2></Float>
       {projects.map((p) => (
-        <Float key={p.name} className="w-full md:w-80">
+        <Float key={p.name} calm sticky className="w-full md:w-80">
           <article className="float-card">
             <div className="flex justify-between gap-2 font-mono text-[11px]">
               <span className="text-ultra">{p.period}</span><span className="text-acid">{p.status}</span>
