@@ -10,7 +10,7 @@ export default function Hero() {
       <Float speed={0.6}><h1 className={`${word} text-[clamp(2.75rem,9vw,8rem)]`}>NITHIN</h1></Float>
       <Float speed={0.6}><span className={`${word} block text-[clamp(2.25rem,7vw,6.5rem)] text-acid`}>PEDDAPELLY</span></Float>
       <Float className="w-full md:w-[22rem]"><div className="float-card">
-        <p className="font-mono text-xs text-ultra">software · machine learning</p>
+        <p className="font-mono text-xs text-ultra">software engineering · full-stack</p>
         <p className="mt-2 text-lg leading-snug">{profile.tagline}</p>
       </div></Float>
       <Float className="w-full md:w-72"><div className="float-card">

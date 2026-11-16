@@ -1,10 +1,10 @@
 import { Zone, Float } from './ui/Zone';
 
 const cards = [
-  { t: 'Background', d: 'Started with Java and data structures, then taught myself the MERN stack through project after project. Now moving into data science and machine learning.' },
+  { t: 'Background', d: 'Started with Java and data structures, then taught myself the MERN stack and TypeScript by building project after project.' },
   { t: 'Leadership', d: 'Led a 4-person team through all three stages of Cisco ThingQbator, and managed a 3-person design team for a student body.' },
-  { t: 'Systems curiosity', d: 'Real-time communication, networking (WebRTC, Wireshark) and performance profiling with LoadRunner, JConsole and VisualVM.' },
-  { t: 'Now', d: 'MSc Computing at Edinburgh Napier University on the Professional Placement pathway, looking for an internship.' },
+  { t: 'Systems curiosity', d: 'Real-time apps with WebRTC and Socket.IO, shipped with Docker Compose and GitHub Actions pipelines.' },
+  { t: 'Now', d: 'MSc Computing at Edinburgh Napier University, building the Nextcloud Guest Lifecycle Manager and looking for an internship or graduate role.' },
 ];
 
 export default function About() {

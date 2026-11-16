@@ -1,6 +1,6 @@
 import { useState } from "react";
 import emailjs from "@emailjs/browser";
-import resumePDF from "../assets/Nithin_Dev_2026.pdf";
+import resumePDF from "../assets/Nithin_Peddapelly_Resume.pdf";
 import { Linkedin, Github, Send, MapPin, FileText } from "lucide-react";
 import { Zone, Float } from "./ui/Zone";
 import { profile } from "../data/profile";
@@ -64,7 +64,7 @@ const Contact = () => {
       </Float>
       <Float><a href={profile.github} target="_blank" rel="noopener noreferrer" className="float-pill ghost flex items-center gap-2"><Github size={16} />GitHub</a></Float>
       <Float><a href={profile.linkedin} target="_blank" rel="noopener noreferrer" className="float-pill ghost flex items-center gap-2"><Linkedin size={16} />LinkedIn</a></Float>
-      <Float><a href={resumePDF} download="Nithin_Dev_2026.pdf" className="float-pill flex items-center gap-2"><FileText size={16} />Resume</a></Float>
+      <Float><a href={resumePDF} download="Nithin_Peddapelly_Resume.pdf" className="float-pill flex items-center gap-2"><FileText size={16} />Resume</a></Float>
       <Float><div className="float-card flex items-center gap-2 text-sm"><MapPin size={16} className="text-acid" />{profile.location}</div></Float>
     </Zone>
   );

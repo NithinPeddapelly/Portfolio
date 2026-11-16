@@ -7,7 +7,7 @@ const flag = 'M5 3 V25 M5 4 H22 L18 9 L22 14 H5';
 
 export default function Timeline() {
   return (
-    <Zone id="timeline" height="820px">
+    <Zone id="timeline" height="950px">
       <Float speed={0.5}><h2 className="font-display text-5xl font-extrabold md:text-7xl">Path<span className="text-acid">.</span></h2></Float>
       {timeline.map((t) => (
         <Float key={t.title} className="w-full md:w-80"><div className="float-card">

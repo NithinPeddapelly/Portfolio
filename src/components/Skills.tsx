@@ -3,7 +3,7 @@ import { skills, achievements } from '../data/profile';
 
 export default function Skills() {
   return (
-    <Zone id="skills" height="1000px">
+    <Zone id="skills" height="1150px">
       <Float speed={0.5}><h2 className="font-display text-5xl font-extrabold md:text-7xl">Stack<span className="text-acid">.</span></h2></Float>
       {skills.map((g) => (
         <Float key={g.title} className="w-full md:w-80"><div className="float-card">
